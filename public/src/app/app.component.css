@@ -1,0 +1,30 @@
+body{
+    max-width: 1000px;
+    padding: 20px;
+    margin: auto;
+}
+
+img{
+    width: 100%;
+    margin: 10px;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 3px;
+}
+
+.comments{
+    margin: 10px;
+}
+
+.post{
+    padding: 10px 0;
+}
+
+#main{
+    height: 500px;
+    overflow: scroll;
+    border: 2px solid gray;
+    border-radius: 3px;
+    background-color: rgb(199, 199, 199);
+    padding: 30px;
+    margin: 20px 0;
+}

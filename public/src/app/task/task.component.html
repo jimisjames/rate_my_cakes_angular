@@ -1,0 +1,44 @@
+<div id="content">
+  <div class="row">
+    <div class="col-8">
+      <img src="{{ postToShow.image }}" alt="Cake">
+      <h3>{{ postToShow.description }}</h3>
+      <h3>Average rating: {{ avg_rating }}</h3>
+      <h2>Posted by: {{ postToShow.poster_name }}</h2>
+      <hr>
+      <button class="btn btn-warning" (click)="close($event)">Back to Cakes</button>
+    </div>
+    <div class="col">
+      <div class="comments">
+        <div *ngFor="let comment of postToShow.comments" class="comment">
+          <p>{{ comment.comment }}</p>
+          <p>Rating: {{ comment.rating }}</p>
+          <h5>- {{ comment.commenter_name }}</h5>
+        </div>
+        <form (submit)="triggerEvent($event)">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input [(ngModel)]="newComment.commenter_name" type="text" class="form-control" name="newComment.commenter_name"
+              id="name" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <input [(ngModel)]="newComment.comment" type="text" class="form-control" name="newComment.comment" id="comment"
+              placeholder="Comment">
+          </div>
+          <div class="form-group">
+            <label for="rating">Star Rating</label>
+            <select [(ngModel)]="newComment.rating" name="newComment.rating" class="form-control" id="rating">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
